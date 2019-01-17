@@ -5,13 +5,53 @@
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
+  <h2>Tibu's NFC!</h2>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label>readingTag</ion-label>
+      <ion-toggle [(ngModel)]="readingTag"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label>writingTag</ion-label>
+      <ion-toggle [(ngModel)]="writingTag"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label>isWriting</ion-label>
+      <ion-toggle [(ngModel)]="isWriting"></ion-toggle>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary">ndefMsg</ion-label>
+      <ion-input placeholder="ndefMsg"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <!-- <p>
+    readingTag: {{readingTag}}
   </p>
   <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
+    writingTag: {{writingTag}}
   </p>
+  <p>
+    isWriting: {{isWriting}}
+  </p> -->
+  <!-- <p>
+    ndefMsg: {{ndefMsg}}
+  </p>
+  <p>
+    todo: {{todo}}
+  </p>
+  <p>
+    tagContentMsg: {{tagContentMsg}}
+  </p> -->
+  
+  <button ion-button round (click)="showSubscriptionsNumber()">nº subscriptions</button>
+
+    <ion-card *ngFor="let line of consoleOutput">
+      <ion-card-content>
+        <p>{{line}}</p>
+      </ion-card-content>
+    </ion-card>
 </ion-content>
