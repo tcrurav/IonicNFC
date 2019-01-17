@@ -17,14 +17,14 @@
       <ion-label>writingTag</ion-label>
       <ion-toggle [(ngModel)]="writingTag"></ion-toggle>
     </ion-item>
-    <ion-item>
+    <!-- <ion-item>
       <ion-label>isWriting</ion-label>
       <ion-toggle [(ngModel)]="isWriting"></ion-toggle>
-    </ion-item>
+    </ion-item> -->
 
     <ion-item>
-      <ion-label color="primary">ndefMsg</ion-label>
-      <ion-input placeholder="ndefMsg"></ion-input>
+      <ion-label color="primary">Message</ion-label>
+      <ion-input placeholder="your message" [(ngModel)]="ndefMsg"></ion-input>
     </ion-item>
   </ion-list>
 
@@ -48,6 +48,7 @@
   </p> -->
   
   <button ion-button round (click)="showSubscriptionsNumber()">nº subscriptions</button>
+  <button ion-button round (click)="resetMessages()">Reset messages</button>
 
     <ion-card *ngFor="let line of consoleOutput">
       <ion-card-content>
